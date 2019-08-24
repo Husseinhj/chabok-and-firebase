@@ -1,0 +1,91 @@
+{
+  "project_info": {
+    "project_number": "703393057547",
+    "firebase_url": "https://sample-firebase-ef598.firebaseio.com",
+    "project_id": "sample-firebase-ef598",
+    "storage_bucket": "sample-firebase-ef598.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703393057547:android:3389bae17c112558",
+        "android_client_info": {
+          "package_name": "com.google.firebase.quickstart.fcm2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "703393057547-vg3gank842lrkj6gfbeg4d9c3eoqq37f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAskSr_80hrxtgdPmzodCUmmKgaP23J8_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "703393057547-vg3gank842lrkj6gfbeg4d9c3eoqq37f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "703393057547-oaajsfagtc1u36bntssacr0brp6k8f85.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.adpdigital.firebase-sample.enterprise"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703393057547:android:3b684ea0c87c3218",
+        "android_client_info": {
+          "package_name": "io.chabok.chabokandfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "703393057547-i43kl3s9cp5cq0vj5ngjbtq79alj04rl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.chabok.chabokandfirebase",
+            "certificate_hash": "ee3ca3db20f32c9b6e01f222447042ad28837368"
+          }
+        },
+        {
+          "client_id": "703393057547-vg3gank842lrkj6gfbeg4d9c3eoqq37f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAskSr_80hrxtgdPmzodCUmmKgaP23J8_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "703393057547-vg3gank842lrkj6gfbeg4d9c3eoqq37f.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "703393057547-oaajsfagtc1u36bntssacr0brp6k8f85.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.adpdigital.firebase-sample.enterprise"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
