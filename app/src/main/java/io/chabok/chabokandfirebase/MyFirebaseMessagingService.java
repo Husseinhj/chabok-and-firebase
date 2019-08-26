@@ -8,6 +8,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.adpdigital.push.ChabokFirebaseMessaging;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
@@ -31,9 +32,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     @Override
     public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
-        Log.d(TAG, "Got firebase message: " + remoteMessage);
-        Log.d(TAG, "onMessageReceived: " + remoteMessage.getData());
-
         super.onMessageReceived(remoteMessage);
+
+        Log.d(TAG, "onMessageReceived: " + remoteMessage.getData());
+        ChabokFirebaseMessaging.onMessageReceived(remoteMessage, getApplicationContext());
     }
 }
