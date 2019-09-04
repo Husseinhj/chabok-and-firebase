@@ -1,5 +1,6 @@
 package io.chabok.chabokandfirebase;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -44,7 +45,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        this.getFirebaseToken();
+        if(isNewInstall()){
+            this.getFirebaseToken();
+        }
+    }
+
+    boolean isNewInstall(){
+        boolean newLanuch = getApplicationContext().getSharedPreferences("test", Context.MODE_PRIVATE).getBoolean("newLaunch",true);
+        getApplicationContext().
+                getSharedPreferences("test", Context.MODE_PRIVATE)
+                .edit()
+                .putBoolean("newLaunch",false)
+                .apply();
+
+        return newLanuch;
     }
 
     private void getFirebaseToken(){
