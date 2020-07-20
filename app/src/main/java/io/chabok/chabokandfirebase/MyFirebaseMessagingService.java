@@ -8,6 +8,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.adpdigital.push.AdpPushClient;
 import com.adpdigital.push.ChabokFirebaseMessaging;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
@@ -28,6 +29,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         // manage this apps subscriptions on the server side, send the
         // Instance ID token to your app server.
        // sendRegistrationToServer(token);
+        ChabokFirebaseMessaging.refreshToken(token, getApplicationContext());
     }
 
     @Override
@@ -35,6 +37,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         super.onMessageReceived(remoteMessage);
 
         Log.d(TAG, "onMessageReceived: " + remoteMessage.getData());
-        ChabokFirebaseMessaging.onMessageReceived(remoteMessage, getApplicationContext());
+        if (ChabokFirebaseMessaging.isChabokPushNotification(remoteMessage.getData())){
+            ChabokFirebaseMessaging.onMessageReceived(remoteMessage, getApplicationContext());
+        } else {
+            // Do something
+        }
     }
 }

@@ -1,8 +1,13 @@
 package io.chabok.chabokandfirebase;
 
 import android.app.Application;
+import android.content.Context;
+import android.content.SharedPreferences;
 
 import com.adpdigital.push.AdpPushClient;
+import com.adpdigital.push.AppState;
+import com.adpdigital.push.LogLevel;
+import com.adpdigital.push.config.Environment;
 import com.google.firebase.FirebaseApp;
 
 public class MainApplication extends Application {
@@ -11,29 +16,19 @@ public class MainApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
+        SharedPreferences p = getSharedPreferences("mamad", Context.MODE_PRIVATE);
+
+        AdpPushClient.setLogLevel(LogLevel.VERBOSE);
+
         FirebaseApp.initializeApp(this);
 
-        //AdpPushClient.init() should always be called in onCreate of Application class
-        AdpPushClient.init(
-                getApplicationContext(),
-                MainActivity.class,
-                "ipiguto", //based on your environment
-                "3188804e67ec2fa182d9df74d7de8e249ec7edb3",          //based on your environment
-                "sijloraci",     //based on your environment
-                "tamnitajbag",  //based on your
-                "703393057547"
-        );
+        AdpPushClient.configureEnvironment(Environment.SANDBOX);
 
-        //true connects to Sandbox environment
-        //false connects to Production environment
-        AdpPushClient.get().setDevelopment(true);
+        AdpPushClient.get().addListener(this);
 
-        String userId = AdpPushClient.get().getUserId();
+    }
 
-        if (userId != null){
-            AdpPushClient.get().register(userId);
-        } else {
-            AdpPushClient.get().registerAsGuest();
-        }
+    public void onEvent(AppState state){
+
     }
 }
